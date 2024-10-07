@@ -4,7 +4,8 @@ import { Text, View } from 'react-native'
 const Home = () => {
   return (
      <View>
-        <Text>Home</Text>
+        <Text>Homenpm uninstall expo-font axios react-native-dotenv
+</Text>
     </View>
   )
 }
