@@ -1,25 +1,23 @@
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import {
-  Text,
-  View,
-  SafeAreaView,
-  ScrollView,
-  ActivityIndicator,
-  RefreshControl,
-  RefreshControlComponent,
+   ActivityIndicator,
+   RefreshControl,
+   SafeAreaView,
+   ScrollView,
+   Text,
+   View
 } from "react-native";
-import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 import {
-  Company,
-  JobAbout,
-  JobFooter,
-  JobTabs,
-  ScreenHeaderBtn,
-  Specifics,
+   Company,
+   JobAbout,
+   JobFooter,
+   JobTabs,
+   ScreenHeaderBtn,
+   Specifics,
 } from "../../components";
 import { COLORS, SIZES, icons } from "../../constants";
 import useFetch from "../../hook/useFetch";
-import { CommonActions } from "@react-navigation/native";
 
 const JobDetails = () => {
    const tabs = ["About", "Qualifications", "Responsibilities"]
@@ -33,7 +31,11 @@ const JobDetails = () => {
    const [refreshing, setRefreshing] = useState(false);
    const [activeTab, setActiveTab] = useState(tabs[0])
 
-   const onRefresh = () => { };
+   const onRefresh = useCallback(() => {
+      setRefreshing(true)
+      refetch
+      setRefreshing(false)
+   });
    
    const displayTabContent = () => {
       switch (activeTab) {
