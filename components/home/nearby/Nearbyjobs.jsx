@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { View, Text, Pressable, ActivityIndicator } from "react-native";
 import styles from "./nearbyjobs.style";
 import { useRouter } from "expo-router";
 import { COLORS } from "../../../constants";
@@ -19,9 +19,9 @@ const Nearbyjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Nearby Jobs</Text>
-        <TouchableOpacity>
+        <Pressable>
           <Text style={styles.headerBtn}>Show All</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={styles.cardsContainer}>
         {isLoading ? (
